@@ -119,4 +119,15 @@ process.on("uncaughtException", (error) => console.error(error));
 process.on("uncaughtExceptionMonitor", (error) => console.error(error));
 process.on("unhandledRejection", (error) => console.error(error));
 
+//Crea un pequeño servidor
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.get('/', (req, res) => res.send('Bot activo en Render ✅'));
+app.listen(PORT, () => {
+  console.log(`Servidor web escuchando en el puerto ${PORT}`);
+});
+
+
 /* Code by Walter */
